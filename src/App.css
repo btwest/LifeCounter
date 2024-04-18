@@ -1,0 +1,84 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw;
+  background: darkslategray;
+}
+
+.Player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  padding: 10px;
+  border: 5px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Health {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Life {
+  font-size: 8rem;
+  color: white;
+  padding: 0 20px; /* Adjust space around the text */
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+}
+
+.Player.flipped .Life {
+  transform: scaleX(-1);
+}
+
+.Life.negative {
+  color: red;
+}
+
+.Increase,
+.Decrease {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 50px solid white;
+  cursor: pointer;
+  /* Remove transform rotations to display triangles horizontally */
+}
+.Increase {
+  transform: rotate(-90deg); /* Intended to display triangle pointing right */
+}
+
+.Decrease {
+  transform: rotate(90deg); /* Intended to display triangle pointing left */
+}
+
+.Player.flipped .Increase {
+  transform: rotate(90deg); /* Should point right when flipped */
+}
+
+.Player.flipped .Decrease {
+  transform: rotate(-90deg); /* Incorrectly set to same as .Increase */
+}
+
+.change-color-icon {
+  cursor: pointer;
+  color: white;
+  font-size: 40px;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.change-color-icon:hover {
+  color: lightgray;
+  font-size: 44px;
+}
