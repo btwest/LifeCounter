@@ -23,10 +23,26 @@
 }
 
 .Health {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.ChangeTally {
+  position: absolute;
+  transform: translateY(-250%); /* Shift upward by its own height */
+  font-size: 2rem;
+  color: white; /* Choose color that fits the design */
+  font-family: "Roboto", sans-serif;
+  user-select: none; /* Prevent text selection */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.ChangeTally.hidden {
+  opacity: 0;
 }
 
 .Life {
